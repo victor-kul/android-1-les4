@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
-        ImageView imageView;
+        ImageView imageView, imageAva;
         Button button;
 
         super.onCreate(savedInstanceState);
@@ -28,8 +28,13 @@ public class MainActivity extends AppCompatActivity {
         TextView text = (TextView) findViewById(R.id.text);
         button = (Button) findViewById(R.id.button);
         Button btn = (Button) findViewById(R.id.btn);
+
         imageView = (ImageView) findViewById(R.id.imageView);
         imageView.setImageResource(R.drawable.leather_wood2);
+
+        imageAva = (ImageView) findViewById(R.id.imageAva);
+        imageAva.setImageResource(R.drawable.ava_victor_kul);
+
 
         TListener tl = new TListener();
         button.setOnTouchListener(tl);
