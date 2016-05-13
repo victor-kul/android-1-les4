@@ -57,6 +57,8 @@ public class MainActivity extends AppCompatActivity {
         }
         text.setText(sBuilder.toString());
 
+
+
     }
 
 //    public void onClick(View v){
