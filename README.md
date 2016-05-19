@@ -1,3 +1,4 @@
-# android-1-l2
+# android-1-les3
 
-- Приложение AboutMe . (отностится к курсу Android-1, урок 2)
+- Приложение AboutMe . (курс Android-1, урок 3)
+>>>>>>> origin/master
