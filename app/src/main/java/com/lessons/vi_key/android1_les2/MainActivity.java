@@ -1,6 +1,7 @@
 package com.lessons.vi_key.android1_les2;
 
 import android.content.Intent;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MotionEvent;
@@ -12,82 +13,74 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentStatePagerAdapter;
+import android.support.v4.view.PagerAdapter;
+import android.support.v4.view.ViewPager;
+import android.support.v7.app.AppCompatActivity;
+
 /**
  * Created by vi-key on 13.05.2016.
  */
 public class MainActivity extends AppCompatActivity {
 
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-
-        ImageView imageView, imageAva;
-        Button button;
-
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
-        TextView text = (TextView) findViewById(R.id.text);
-        button = (Button) findViewById(R.id.button);
-        Button btn = (Button) findViewById(R.id.btn);
-
-        imageView = (ImageView) findViewById(R.id.imageView);
-        imageView.setImageResource(R.drawable.leather_wood2);
-
-        imageAva = (ImageView) findViewById(R.id.imageAva);
-        imageAva.setImageResource(R.drawable.ava_victor_kul);
-
-        final Interpolator over = new OvershootInterpolator(4);
-
-        TListener tl = new TListener();
-        button.setOnTouchListener(tl);
-
-
-
-        btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-//                showToast(R.string.txt_false);
-                showToast("yea");
-            }
-        });
-
-
-        String[] skills = this.getResources().getStringArray(R.array.my_skills);
-        StringBuilder sBuilder = new StringBuilder();
-        for(int i=0; i<skills.length; i++){
-            sBuilder.append(skills[i] + "\n");
-        }
-        text.setText(sBuilder.toString());
-
-
-
-    }
-
-//    public void onClick(View v){
-//        Intent intent;
-//    }
-
-    private void showToast(String message) {
-//        Toast.makeText(MainActivity.this, message, Toast.LENGTH_SHORT).show();
-        Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
-    }
-
-    class TListener implements View.OnTouchListener {
+    private ViewPager mPager;
+    private PagerAdapter mPagerAdapter;
 
         @Override
-        public boolean onTouch(View v, MotionEvent event) {
-            if(event.getAction() == MotionEvent.ACTION_DOWN) {
-                showToast("ACTION_DOWN");
-                return true;
-            } else if(event.getAction() == MotionEvent.ACTION_UP) {
-                showToast("ACTION_UP");
-                return true;
-            }
+        protected void onCreate(Bundle savedInstanceState) {
 
-            return false;
+
+            super.onCreate(savedInstanceState);
+            setContentView(R.layout.activity_main);
+    //        getSupportActionBar().setTitle(R.string.);
+
+            mPager = (ViewPager) findViewById(R.id.pager);
+            mPagerAdapter = new ScreenSlidePagerAdapter(getSupportFragmentManager());
+            mPager.setAdapter(mPagerAdapter);
+            mPager.setOffscreenPageLimit(2);
+
+
+
+
+
         }
 
-    }
+        //    public void onClick(View v){
+        //        Intent intent;
+        //    }
+        private class ScreenSlidePagerAdapter extends FragmentStatePagerAdapter {
+
+            public ScreenSlidePagerAdapter(FragmentManager fm) {
+                super(fm);
+            }
+
+            @Override
+            public Fragment getItem(int position) {
+
+                Fragment fragment = null;
+                switch (position) {
+                    case 0:
+                        fragment = new PageMain();
+                        break;
+                    case 1:
+                        fragment = new PageSecond();
+                        break;
+                    default:
+                }
+                return fragment;
+            }
+
+
+            @Override
+            public int getCount() {
+                return 2;
+            }
+        }
+
+
+
 
 }
