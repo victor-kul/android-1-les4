@@ -5,6 +5,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.animation.Interpolator;
+import android.view.animation.OvershootInterpolator;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -35,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
         imageAva = (ImageView) findViewById(R.id.imageAva);
         imageAva.setImageResource(R.drawable.ava_victor_kul);
 
+        final Interpolator over = new OvershootInterpolator(4);
 
         TListener tl = new TListener();
         button.setOnTouchListener(tl);

@@ -14,7 +14,7 @@ public class OtherActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_other);
-        Log.d("...", "Сработал onCreate");
+//        Log.d("...", "Сработал onCreate");
     }
 
     @Override
@@ -23,6 +23,5 @@ public class OtherActivity extends AppCompatActivity {
         Log.d("...", "Сработал onDestroy");
     }
 
-    public void btnClick(View view) {
-    }
+//    public void btnClick(View view) {    }
 }
