@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">android1-Les2</string>
+    <string name="app_name">android1-Les4</string>
     <string name="my_txt">Портретная ориентация</string>
 
     <string name="my_last_name">Куликовский</string>
@@ -21,5 +21,23 @@
         <item>имел опыт работы с разными фреймворками</item>
 
         <item>Как по мне самый полезный код должен быть лаконичным</item>
+    </string-array>
+
+
+    <string-array name="my_skills_title">
+        <item>Full Stack</item>
+        <item>Вёрстка</item>
+        <item>Тестирование</item>
+
+        <item>Работоспособность</item>
+        <item>Опыт</item>
+
+        <item>Иностранный яз.</item>
+        <item>Среды разработок</item>
+
+        <item>Участие</item>
+        <item>Фреймоврки</item>
+
+        <item>#</item>
     </string-array>
 </resources>

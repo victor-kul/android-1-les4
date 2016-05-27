@@ -86,8 +86,9 @@
 
             <TextView
                 android:layout_width="210dp"
+                android:visibility="invisible"
                 android:layout_height="wrap_content"
-                android:text="New Text"
+                android:text=""
                 android:id="@+id/textAll"
                 android:layout_gravity="center_horizontal"
                 android:layout_weight="0.44"

@@ -3,6 +3,7 @@ package com.lessons.vi_key.android1_les2;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.Menu;
 import android.view.View;
 
 /**
